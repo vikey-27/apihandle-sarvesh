@@ -17,7 +17,7 @@ app.use((req, res, next) => {
     next();
   });
 
-
+  app.get("/", (req, res) => res.send("Express on Vercel"));
 app.get('/get-request',async (req,res,next)=>{
     let result= await Detail.find();
     if(result.length == 0) {
@@ -49,7 +49,7 @@ app.post('/post-request',async (req,res,next)=>{
 
 
 mongoose.connect('mongodb+srv://sarveshwars321:AR0VnUMIstowBfs0@cluster0.oq2xn.mongodb.net/sarvesh?retryWrites=true&w=majority&appName=Cluster0').then(()=>{
-    app.listen(3030);
+    app.listen(3030,()=>{console.log('Server ready on the PORT')});
 }).catch((err)=>{
     console.log(err);
 })
