@@ -49,7 +49,7 @@ app.post('/post-request',async (req,res,next)=>{
 
 
 mongoose.connect('mongodb+srv://sarveshwars321:AR0VnUMIstowBfs0@cluster0.oq2xn.mongodb.net/sarvesh?retryWrites=true&w=majority&appName=Cluster0').then(()=>{
-    app.listen(process.env.PORT);
+    app.listen(3030);
 }).catch((err)=>{
     console.log(err);
 })
