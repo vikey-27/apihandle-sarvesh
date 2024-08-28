@@ -18,7 +18,7 @@ app.use((req, res, next) => {
   });
 
 
-app.get('/get-request',async (req,res,next)=>{
+app.get('api/get-request',async (req,res,next)=>{
     let result= await Detail.find();
     if(result.length == 0) {
         return next(new HttpError('No data is Found',404));
@@ -27,7 +27,7 @@ app.get('/get-request',async (req,res,next)=>{
 
 })
 
-app.post('/post-request',async (req,res,next)=>{
+app.post('api/post-request',async (req,res,next)=>{
     const {name,description,title,price}=req.body;
     const createDetail= new Detail({
         name,description,title,price
