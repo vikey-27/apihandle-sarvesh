@@ -3,6 +3,7 @@ const express=require('express')
 const mongoose=require('mongoose')
 const Detail=require('./models/details')
 const HttpError=require('./models/http-error');
+require('dotenv').config();
 
 const app=express();
 
@@ -48,15 +49,10 @@ app.post('/post-request',async (req,res,next)=>{
 
 
 mongoose.connect('mongodb+srv://sarveshwars321:AR0VnUMIstowBfs0@cluster0.oq2xn.mongodb.net/sarvesh?retryWrites=true&w=majority&appName=Cluster0').then(()=>{
-    app.listen(3030);
+    app.listen(process.env.PORT);
 }).catch((err)=>{
     console.log(err);
 })
 
 
 
-// sarvesh
-// uQccOwIhpxKZyMcd
-
-// sarveshwars321
-// AR0VnUMIstowBfs0
