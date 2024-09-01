@@ -48,8 +48,8 @@ app.post('/api/post-request',async (req,res,next)=>{
 })
 
 
-mongoose.connect('mongodb+srv://sarveshwars321:AR0VnUMIstowBfs0@cluster0.oq2xn.mongodb.net/sarvesh?retryWrites=true&w=majority&appName=Cluster0').then(()=>{
-    app.listen(3030,()=>{console.log('Server ready on the PORT')});
+mongoose.connect(`mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.oq2xn.mongodb.net/sarvesh?retryWrites=true&w=majority&appName=Cluster0`).then(()=>{
+    app.listen(process.env.PORT,()=>{console.log('Server ready on the PORT')});
 }).catch((err)=>{
     console.log(err);
 })
